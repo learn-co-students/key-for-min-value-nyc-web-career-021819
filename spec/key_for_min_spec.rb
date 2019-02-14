@@ -1,7 +1,7 @@
 describe "smallest hash value" do
 
   it "does not call the `#keys` method" do
-    hash = {:blake => 500, :ashley => 2, :adam => 1}
+   hash = {:adam => 1, :ashley => 2, :blake => 500}
 
     expect(hash).to_not receive(:keys)
 
@@ -9,7 +9,8 @@ describe "smallest hash value" do
   end
 
   it "does not call the `#values` method" do
-    hash = {:blake => 500, :ashley => 2, :adam => 1}
+   hash = {:adam => 1, :ashley => 2, :blake => 500}
+    
 
     expect(hash).to_not receive(:values)
 
@@ -17,7 +18,7 @@ describe "smallest hash value" do
   end
 
   it "does not call the `#min` method" do
-    hash = {:blake => 500, :ashley => 2, :adam => 1}
+    hash = {:adam => 1, :ashley => 2, :blake => 500}
 
     expect(hash).to_not receive(:min)
 
@@ -25,7 +26,7 @@ describe "smallest hash value" do
   end
 
   it "does not call the `#sort` method" do
-    hash = {:blake => 500, :ashley => 2, :adam => 1}
+    hash = {:adam => 1, :ashley => 2, :blake => 500}
 
     expect(hash).to_not receive(:sort)
 
@@ -33,7 +34,7 @@ describe "smallest hash value" do
   end
 
   it "does not call the `#sort_by` method" do
-    hash = {:blake => 500, :ashley => 2, :adam => 1}
+    hash = {:adam => 1, :ashley => 2, :blake => 500}
 
     expect(hash).to_not receive(:sort_by)
 
@@ -41,7 +42,7 @@ describe "smallest hash value" do
   end
 
   it "does not call the `#min_by` method" do
-    hash = {:blake => 500, :ashley => 2, :adam => 1}
+    hash = {:adam => 1, :ashley => 2, :blake => 500}
 
     expect(hash).to_not receive(:min_by)
 
@@ -49,11 +50,7 @@ describe "smallest hash value" do
   end
 
   it "returns the key of the smallest hash value" do
-    expect(key_for_min_value({:blake => 500, :ashley => 2, :adam => 1})).to eq(:adam)
-  end
-
-  it "returns the key of the smallest hash value example 2" do
-    expect(key_for_min_value({:blake => 10, :ashley => 50, :adam => 17})).to eq(:blake)
+    expect(key_for_min_value({:adam => 1, :ashley => 2, :blake => 500})).to eq(:adam)
   end
 
   it "returns nil for an empty hash" do
